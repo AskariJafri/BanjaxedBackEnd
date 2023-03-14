@@ -1,0 +1,103 @@
+# type Company {
+#   name: String
+#   catchPhrase: String
+#   bs: String
+# }
+
+# type Geo {
+#   lat: String
+#   lng: String
+# }
+
+# type Address {
+#   street: String
+#   suite: String
+#   city: String
+#   zipcode: String
+#   geo: Geo
+# }
+
+# type User {
+#   id: Int
+#   name: String
+#   username: String
+#   email: String
+#   phone: String
+#   website: String
+#   company: Company
+#   address: Address
+# }
+# type Query {
+#   users: [User!]!
+#   user(id: ID!): User
+# }
+
+# type Mutation {
+#   createUser(name: String!, email: String!): User!
+#   updateUser(id: ID!, name: String, email: String): User!
+#   deleteUser(id: ID!): User
+# }
+
+# New schema for e leraning website
+type Course {
+  id: ID
+  title: String
+  description: String
+  instructor: String
+  lessons: Lesson
+}
+
+type Lesson {
+  id: ID
+  title: String
+  description: String
+  duration: Int
+  course: Course
+  videos: Video
+}
+
+type Video {
+  id: ID
+  title: String
+  url: String
+  lesson: Lesson
+}
+type Query {
+  courses: [Course]
+  course(id: ID!): Course
+  lessons: [Lesson]
+  lesson(id: ID!): Lesson
+  videos: [Video!]!
+  video(id: ID!): Video
+}
+
+type Mutation {
+  createCourse(
+    title: String!
+    description: String!
+    instructor: String!
+  ): Course!
+  updateCourse(
+    id: ID!
+    title: String
+    description: String
+    instructor: String
+  ): Course!
+  deleteCourse(id: ID!): Course
+  createLesson(
+    courseId: ID!
+    title: String!
+    description: String!
+    duration: Int!
+  ): Lesson!
+  updateLesson(
+    id: ID!
+    title: String
+    description: String
+    duration: Int
+  ): Lesson!
+  deleteLesson(id: ID!): Lesson
+  createVideo(lessonId: ID!, title: String!, url: String!): Video!
+  updateVideo(id: ID!, title: String, url: String): Video!
+  deleteVideo(id: ID!): Video
+}

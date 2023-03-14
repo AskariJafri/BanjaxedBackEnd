@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "#Include00",
+    "database": "AngularApp",
+    "host": "127.0.0.1",
+    "dialect": "mssql"
+  }  
+}
