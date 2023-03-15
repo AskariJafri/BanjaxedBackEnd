@@ -1,5 +1,10 @@
 import { Dialect, Sequelize } from "sequelize";
 import * as dbConfig from "./../config/config.json"
+import Course from "./Course";
+import Lesson from "./Lesson";
+
+
+// Lesson.belongsTo(Course);
 
 const sequelize = new Sequelize(
   dbConfig.development.database,

@@ -69,6 +69,7 @@ type Query {
   lesson(id: ID!): Lesson
   videos: [Video!]!
   video(id: ID!): Video
+  getCourseFromLessons(courseId:ID!):[Lesson]
 }
 
 type Mutation {

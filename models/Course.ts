@@ -6,6 +6,7 @@ import Lesson from "./Lesson";
 
 interface CourseAttributes {
   id?: number;
+  courseId?: number;
   title?: string;
   description?: string;
   instructorName?: string;
@@ -30,6 +31,7 @@ const Course = sequelize.define<CourseInstance>(
       autoIncrement: true,
       primaryKey: true,
     },
+    courseId:DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     instructorName: DataTypes.STRING,
