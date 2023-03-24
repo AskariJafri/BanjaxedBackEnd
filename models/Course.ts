@@ -31,7 +31,6 @@ const Course = sequelize.define<CourseInstance>(
       autoIncrement: true,
       primaryKey: true,
     },
-    courseId:DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     instructorName: DataTypes.STRING,

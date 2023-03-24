@@ -8,10 +8,10 @@ export const resolvers = {
   courses: async () => {
     console.log("Quering courses");
     // return { data: "dsa" };
-    return await Course.findAll({include: [Lesson]});
+    return await Course.findAll();
   },
   course: async ( { id }: any) => {
-    return await Course.findByPk(id,{include: [Lesson]});
+    return await Course.findByPk(id);
   },  
   lessons: async () => {
     return await Lesson.findAll({ include: [Course] });
@@ -77,8 +77,7 @@ export const resolvers = {
   },
   getCourseFromLessons: async ( { courseId }:any) => {
     const lessons = await Lesson.findAll({
-      where: {courseId} ,
-       // Include the associated Course model
+      where: {courseId} 
     });
     return lessons;
   },
